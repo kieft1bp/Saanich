@@ -1,4 +1,4 @@
-###### Taken from https://herewecode.io/blog/create-repository-github/
+#### Taken from https://herewecode.io/blog/create-repository-github/    #####
 
 git add dada2_samples_to_process.R    #### add files to the queue to be pushed (use . for all files)
 
