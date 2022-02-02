@@ -7,14 +7,15 @@ library(tidyverse)
 library(dplyr)
 library(kableExtra)
 
+# Load the phyloseq object and env from the DADA2 run
 load("./dada2run2_track_ps.RData")
 ps_working = ps
 
 # Update metadata and tax
-new_metadata = read.table("dada2_run2_metadata_clean.tsv", header=T, row.names = 1, sep="\t", stringsAsFactors = F)
+new_metadata = read.table("sample_metadata_table.tsv", header=T, row.names = 1, sep="\t", stringsAsFactors = F)
 is.na(new_metadata) = "NAN"
 sample_data(ps_working) = new_metadata
-new_tax = read.table("dada2_run2_taxonomy_clean.tsv", header=T, row.names = 1, sep="\t", stringsAsFactors = F)
+new_tax = read.table("ASV_taxonomy_table.tsv", header=T, row.names = 1, sep="\t", stringsAsFactors = F)
 tax_table(ps_working) = as.matrix(new_tax)
 
 # Make a relative ps object
