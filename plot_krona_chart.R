@@ -19,7 +19,7 @@ new_tax = read.table("dada2_run2_taxonomy_clean.tsv", header=T, row.names = 1, s
 tax_table(ps_working) = as.matrix(new_tax)
 
 # Plot Krona plot into an HTML that should appear in the browser
-plot_krona(ps_working, "krona_plot.html", "Depth", trim = F)
+plot_krona(ps_working, "krona_plot", "Depth", trim = F)
 
 
 
